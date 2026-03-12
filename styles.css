@@ -365,9 +365,6 @@ img {
   padding-top: var(--nav-height);
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(to bottom, rgba(13, 17, 23, 0.72), rgba(13, 17, 23, 0.88)),
-    url('https://thrivekite.com/wp-content/uploads/2024/11/lmn_headers_.png') center / cover no-repeat;
 }
 
 .hero__inner {
