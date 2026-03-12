@@ -909,22 +909,10 @@ img {
   height: 280px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid transparent;
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  box-shadow:
-    0 0 0 3px var(--bg-secondary),
-    0 0 0 5px var(--pink),
-    0 20px 40px rgba(232, 75, 138, 0.15);
 }
 
 .why__headshot-glow {
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(232, 75, 138, 0.08), transparent 70%);
-  pointer-events: none;
+  display: none;
 }
 
 /* Fallback orbs when no headshot present */
@@ -1126,14 +1114,10 @@ img {
   text-align: center;
 }
 
-.footer__logo {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.2rem;
-  background: var(--gradient-warm);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.footer__logo-svg {
+  height: 24px;
+  width: auto;
+  display: block;
 }
 
 .footer__brand p {
