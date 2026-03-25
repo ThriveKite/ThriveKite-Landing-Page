@@ -141,16 +141,39 @@ img {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--space-sm);
 }
 
 .section__subtitle {
   font-size: 1.125rem;
   color: var(--text-secondary);
-  text-align: center;
+  text-align: left;
   max-width: 600px;
-  margin: 0 auto var(--space-xl);
+  margin: 0 0 var(--space-xl);
+}
+
+/* Eyebrow */
+.eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--teal);
+  flex-shrink: 0;
 }
 
 /* Scroll reveal */
@@ -759,7 +782,7 @@ img {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   background: var(--gradient-warm);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -777,7 +800,7 @@ img {
 /* Stats row */
 .jumpstart__stats {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--space-xl);
   margin-bottom: var(--space-xl);
 }
@@ -785,7 +808,7 @@ img {
 .jumpstart__stat {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.25rem;
 }
 
@@ -816,7 +839,7 @@ img {
   font-weight: 700;
   font-size: 1.15rem;
   color: var(--text-primary);
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--space-lg);
 }
 
@@ -972,10 +995,15 @@ img {
 .process__step-marker {
   width: 48px;
   height: 48px;
-  border-radius: 50%;
-  background: var(--step-color);
-  opacity: 0.9;
-  box-shadow: 0 0 20px color-mix(in srgb, var(--step-color) 30%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 10px rgba(78, 205, 196, 0.25));
+}
+
+.process__step-marker svg {
+  width: 100%;
+  height: 100%;
 }
 
 .process__step-label {
@@ -988,7 +1016,7 @@ img {
 .process__step-connector {
   width: 80px;
   height: 2px;
-  background: var(--gradient-full-spectrum);
+  background: var(--text-muted);
   margin: 0 var(--space-sm);
   margin-bottom: var(--space-md);
 }
@@ -999,7 +1027,7 @@ img {
   font-size: 1rem;
   color: var(--text-muted);
   font-style: italic;
-  text-align: center;
+  text-align: left;
   margin-top: var(--space-md);
 }
 
@@ -1129,9 +1157,11 @@ img {
 .why__visual {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 300px;
+  gap: var(--space-sm);
 }
 
 .why__headshot {
@@ -1139,6 +1169,13 @@ img {
   height: 280px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.why__headshot-caption {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
 .why__headshot-glow {
@@ -1498,6 +1535,7 @@ img {
   <!-- What We Do -->
   <section class="section section--alt" id="what-we-do">
     <div class="container">
+      <p class="eyebrow reveal">Expertise</p>
       <h2 class="section__title reveal">What We <span class="grad-cool">Do</span></h2>
       <p class="section__subtitle reveal">We help climate companies turn early interest into lasting customer engagement.</p>
       <div class="expertise__grid">
@@ -1544,7 +1582,7 @@ img {
           </div>
           <span class="expertise__label">Design for Adoption</span>
           <h3>Make Participation the Path of Least Resistance</h3>
-          <p>We design experiences grounded in behavioral science&mdash;removing friction, building motivation, creating flows where the right action feels obvious. Not dark patterns. Ethical design that makes engagement genuinely rewarding.</p>
+          <p>We design experiences grounded in behavioral science&mdash;removing friction, building motivation, creating flows where the right action feels obvious. Never against people's best interests. Ethical design that makes engagement genuinely rewarding.</p>
           <div class="expertise__looks-like">
             <span class="expertise__looks-like-label">What this looks like:</span>
             Behavioral diagnostics, journey optimization, UX design, experience strategy
@@ -1557,6 +1595,7 @@ img {
   <!-- Sound Familiar -->
   <section class="section" id="challenges">
     <div class="container">
+      <p class="eyebrow reveal">Common challenges</p>
       <h2 class="section__title reveal">Sound <span class="grad-warm">Familiar?</span></h2>
       <p class="section__subtitle reveal">Signs it might be time to talk</p>
       <div class="challenges__grid">
@@ -1585,6 +1624,7 @@ img {
   <!-- Services -->
   <section class="section section--alt" id="services">
     <div class="container">
+      <p class="eyebrow reveal">Services</p>
       <h2 class="section__title reveal">How We <span class="grad-mid">Help</span></h2>
       <p class="section__subtitle reveal">We partner with climate companies at every stage of growth</p>
       <div class="services__grid">
@@ -1644,7 +1684,7 @@ img {
   <!-- Brand Jumpstart -->
   <section class="section jumpstart" id="jumpstart">
     <div class="container">
-      <p class="jumpstart__eyebrow reveal">Brand Jumpstart</p>
+      <p class="eyebrow reveal">Brand Jumpstart</p>
       <h2 class="section__title reveal">Your complete brand foundation.<br><span class="jumpstart__accent">Four weeks. $3,000.</span></h2>
       <p class="section__subtitle reveal" style="max-width: 640px;">Led by a design &amp; brand expert with 20+ years of experience, accelerated by AI&mdash;so you get the quality of a premium engagement at a price that makes sense before Series A. Carbon-negative by design.</p>
 
@@ -1706,6 +1746,7 @@ img {
   <!-- How We Work -->
   <section class="section" id="how-we-work">
     <div class="container">
+      <p class="eyebrow reveal">Process</p>
       <h2 class="section__title reveal">How We <span class="grad-cool">Work</span></h2>
       <div class="process__content reveal">
         <p class="process__lead">We start with diagnosis, then work together on what matters most.</p>
@@ -1713,17 +1754,23 @@ img {
         <p class="process__body">From there, we collaborate on the fixes that matter. Maybe that's building your brand foundations, redesigning a critical journey, or providing ongoing strategic guidance. We work in phases so you see value quickly and can adjust as you learn.</p>
         <div class="process__flow reveal">
           <div class="process__step">
-            <div class="process__step-marker" style="--step-color: var(--coral);"></div>
+            <div class="process__step-marker">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="grad-diagnose" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E84B8A"/><stop offset="100%" stop-color="#F06449"/></linearGradient></defs><circle cx="11" cy="11" r="8" stroke="url(#grad-diagnose)"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="url(#grad-diagnose)"/></svg>
+            </div>
             <span class="process__step-label">Diagnose</span>
           </div>
           <div class="process__step-connector" aria-hidden="true"></div>
           <div class="process__step">
-            <div class="process__step-marker" style="--step-color: var(--yellow);"></div>
+            <div class="process__step-marker">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="grad-design" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F4A742"/><stop offset="100%" stop-color="#F7DC6F"/></linearGradient></defs><path d="M12 20h9" stroke="url(#grad-design)"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="url(#grad-design)"/></svg>
+            </div>
             <span class="process__step-label">Design</span>
           </div>
           <div class="process__step-connector" aria-hidden="true"></div>
           <div class="process__step">
-            <div class="process__step-marker" style="--step-color: var(--teal);"></div>
+            <div class="process__step-marker">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="grad-partner" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ECDC4"/><stop offset="100%" stop-color="#7BC67E"/></linearGradient></defs><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="url(#grad-partner)"/><circle cx="9" cy="7" r="4" stroke="url(#grad-partner)"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="url(#grad-partner)"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="url(#grad-partner)"/></svg>
+            </div>
             <span class="process__step-label">Partner</span>
           </div>
         </div>
@@ -1735,6 +1782,7 @@ img {
   <!-- Why ThriveKite -->
   <section class="section section--alt" id="why">
     <div class="container">
+      <p class="eyebrow reveal">The difference</p>
       <h2 class="section__title reveal">Why <span class="grad-warm">ThriveKite</span></h2>
       <div class="why__grid">
         <div class="why__content reveal">
@@ -1746,7 +1794,7 @@ img {
             </div>
             <div class="why__point" style="--point-color: var(--pink);">
               <h4>Climate Company Focus</h4>
-              <p>We work exclusively with climate companies, so we understand your mission constraints, stakeholder complexity, and why these solutions need different design approaches. You're not paying us to learn your industry.</p>
+              <p>We specialize in climate companies, so we understand your mission constraints, stakeholder complexity, and why these solutions need different design approaches. You're not paying us to learn your industry.</p>
             </div>
             <div class="why__point" style="--point-color: var(--orange);">
               <h4>Partnership Model</h4>
@@ -1754,13 +1802,14 @@ img {
             </div>
             <div class="why__point" style="--point-color: var(--green);">
               <h4>Ethical Design</h4>
-              <p>Persuasion without manipulation. We design for genuine engagement, never dark patterns&mdash;just thoughtful design that makes the right thing the easy, obvious choice.</p>
+              <p>Persuasion without manipulation. We design for genuine engagement, never against people's best interests&mdash;just thoughtful design that makes the right thing the easy, obvious choice.</p>
             </div>
           </div>
         </div>
         <div class="why__visual reveal">
           <div class="why__headshot-glow" aria-hidden="true"></div>
           <img src="linsey-headshot.png" alt="Linsey, founder of ThriveKite" class="why__headshot" loading="lazy">
+          <p class="why__headshot-caption">Linsey Nancarrow, Founder of ThriveKite</p>
         </div>
       </div>
     </div>
@@ -1769,6 +1818,7 @@ img {
   <!-- Contact CTA -->
   <section class="section contact" id="contact">
     <div class="container contact__inner">
+      <p class="eyebrow reveal">Contact</p>
       <h2 class="section__title reveal">Let's Build Something That <span class="grad-mid">Matters</span></h2>
       <p class="section__subtitle reveal">Whether you're early stage and need brand foundations, or you have active users and need to fix adoption&mdash;let's start with a conversation about where you are and what's possible.</p>
       <a href="https://calendar.google.com/appointments/schedules/AcZssZ3dzje9ecoeozwvb1lzj7MsO8r0ClYh3qnKPB01NtMeYeFHupDPGCDDSBCh2vUR_3V79CE4lU7I" target="_blank" rel="noopener" class="btn btn--primary btn--lg reveal">Book a Conversation</a>
