@@ -15,16 +15,24 @@
   --text-secondary: #C9D1D9;
   --text-muted: #8B949E;
 
-  /* Brand accent spectrum */
-  --pink: #E84B8A;
-  --coral: #F06449;
-  --orange: #F4A742;
+  /* Brand accent spectrum (matched to Figma source of truth) */
+  --signature-magenta: #D41E70;
+  --coral-burst: #E75F60;
+  --marigold: #ECA400;
+  --pistachio: #BDE783;
+  --lagoon: #5DD39E;
+  --deep-ocean: #09415C;
+
+  /* Legacy aliases — kept for backward compatibility, point at new brand colors */
+  --pink: #D41E70;
+  --coral: #E75F60;
+  --orange: #ECA400;
   --yellow: #F7DC6F;
   --yellow-bright: #E8D44D;
-  --green: #7BC67E;
+  --green: #BDE783;
   --green-strong: #5CB85C;
-  --teal: #4ECDC4;
-  --teal-deep: #45B7AA;
+  --teal: #5DD39E;
+  --teal-deep: #09415C;
   --mint: #A8E6CF;
 
   /* Gradients */
@@ -392,11 +400,19 @@ img {
   font-size: 0.85rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--coral-burst);
   margin-bottom: var(--space-md);
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards 0.1s;
 }
+
+/* Eyebrow tone modifiers — coordinate with the section's gradient highlight */
+.eyebrow--warm { color: var(--coral-burst); }
+.eyebrow--warm::before { background: var(--coral-burst); }
+.eyebrow--cool { color: var(--lagoon); }
+.eyebrow--cool::before { background: var(--lagoon); }
+.eyebrow--mid  { color: var(--marigold); }
+.eyebrow--mid::before  { background: var(--marigold); }
 
 .hero__title {
   font-size: clamp(2.25rem, 6vw, 3.75rem);
@@ -575,6 +591,12 @@ img {
   letter-spacing: 0.05em;
   display: block;
   margin-bottom: 0.25rem;
+}
+
+.expertise__for-when {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xs);
 }
 
 @media (min-width: 768px) {
@@ -1364,6 +1386,13 @@ img {
   height: 16px;
   width: auto;
   display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .footer__logo-svg {
+    margin: 0;
+  }
 }
 
 .footer__brand p {

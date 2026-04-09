@@ -30,16 +30,24 @@
   --text-secondary: #C9D1D9;
   --text-muted: #8B949E;
 
-  /* Brand accent spectrum */
-  --pink: #E84B8A;
-  --coral: #F06449;
-  --orange: #F4A742;
+  /* Brand accent spectrum (matched to Figma source of truth) */
+  --signature-magenta: #D41E70;
+  --coral-burst: #E75F60;
+  --marigold: #ECA400;
+  --pistachio: #BDE783;
+  --lagoon: #5DD39E;
+  --deep-ocean: #09415C;
+
+  /* Legacy aliases — kept for backward compatibility, point at new brand colors */
+  --pink: #D41E70;
+  --coral: #E75F60;
+  --orange: #ECA400;
   --yellow: #F7DC6F;
   --yellow-bright: #E8D44D;
-  --green: #7BC67E;
+  --green: #BDE783;
   --green-strong: #5CB85C;
-  --teal: #4ECDC4;
-  --teal-deep: #45B7AA;
+  --teal: #5DD39E;
+  --teal-deep: #09415C;
   --mint: #A8E6CF;
 
   /* Gradients */
@@ -175,6 +183,14 @@ img {
   background: var(--teal);
   flex-shrink: 0;
 }
+
+/* Eyebrow tone modifiers — coordinate with the section's gradient highlight */
+.eyebrow--warm { color: var(--coral-burst); }
+.eyebrow--warm::before { background: var(--coral-burst); }
+.eyebrow--cool { color: var(--lagoon); }
+.eyebrow--cool::before { background: var(--lagoon); }
+.eyebrow--mid  { color: var(--marigold); }
+.eyebrow--mid::before  { background: var(--marigold); }
 
 /* Scroll reveal */
 .reveal {
@@ -430,7 +446,7 @@ img {
   font-size: 0.85rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--coral-burst);
   margin-bottom: var(--space-md);
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards 0.1s;
@@ -1484,12 +1500,12 @@ img {
           <path d="M96.9385 19.0186L103.514 71.1191L100.238 70.0781C92.373 67.5786 72.3487 64.1026 55.0215 69.8613L31.8438 96.1377C31.0413 97.0475 29.653 97.1345 28.7432 96.332C27.834 95.5296 27.7469 94.1421 28.5489 93.2324L51.7266 66.9551C55.277 49.0445 49.3283 29.6108 45.8663 22.1191L44.4249 19L96.9385 19.0186ZM67.5274 76.0312C73.5751 75.6837 79.9267 77.3343 84.4512 81.3252L86.0987 82.7783L84.6456 84.4258C80.6805 88.921 74.5866 91.2853 68.5411 91.6328C63.2308 91.938 57.6859 90.7028 53.3497 87.6953L47.7432 94.0527C46.9408 94.9625 45.5524 95.0493 44.6426 94.2471C43.7328 93.4446 43.6458 92.0563 44.4483 91.1465L51.4229 83.2393C55.3881 78.7439 61.4817 76.3787 67.5274 76.0312ZM79.6085 83.1807C76.3073 81.1168 72.0603 80.171 67.7794 80.417C63.5079 80.6625 59.4421 82.08 56.46 84.4844C59.7611 86.5482 64.0082 87.4931 68.2891 87.2471C72.5604 87.0015 76.6265 85.5849 79.6085 83.1807ZM36.6788 39.1875C41.2031 43.1783 43.6337 49.2738 44.044 55.3174C44.4541 61.3591 42.8684 67.7009 38.9034 72.1963L31.9288 80.1035C31.1263 81.0133 29.738 81.1002 28.8282 80.2979C27.9184 79.4954 27.8314 78.1071 28.6338 77.1973L34.2403 70.8408C30.715 66.914 28.7978 61.5665 28.4376 56.2598C28.0276 50.2182 29.6132 43.8771 33.5782 39.3818L35.0313 37.7344L36.6788 39.1875ZM35.4424 44.2236C33.4292 47.4826 32.5306 51.6942 32.8204 55.9629C33.1108 60.241 34.5793 64.336 37.0391 67.3535C39.0521 64.0947 39.9499 59.8837 39.6602 55.6152C39.3698 51.337 37.9023 47.2412 35.4424 44.2236ZM97.0137 54.709C89.6765 53.4239 79.6046 52.7147 69.5606 54.5615L68.3145 54.79L60.2745 63.9062C74.8491 60.8358 89.8444 62.8588 98.3096 64.9766L97.0137 54.709ZM51.169 23.3955C54.3271 31.5301 58.2064 46.1558 56.9795 61L67.085 49.542C67.2901 39.9205 65.3871 30.7483 63.337 24.1807C63.2558 23.9205 63.2274 23.6563 63.2422 23.3994L51.169 23.3955ZM72.8799 49.6143C81.5422 48.5534 89.9093 49.1213 96.4395 50.1592L93.4317 26.3154L72.8799 49.6143ZM67.6915 23.4004C69.4239 29.0835 71.0381 36.5539 71.4122 44.6367L90.1368 23.4092L67.6915 23.4004Z" fill="url(#nav-logo-mark)"/>
           <defs>
             <linearGradient id="nav-logo-text" x1="119.927" y1="42.554" x2="199.654" y2="207.974" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#E84B8A"/>
-              <stop offset="1" stop-color="#F06449"/>
+              <stop stop-color="#D41E70"/>
+              <stop offset="1" stop-color="#E75F60"/>
             </linearGradient>
             <linearGradient id="nav-logo-mark" x1="28" y1="37.7492" x2="107.65" y2="61.1984" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#E84B8A"/>
-              <stop offset="1" stop-color="#F06449"/>
+              <stop stop-color="#D41E70"/>
+              <stop offset="1" stop-color="#E75F60"/>
             </linearGradient>
           </defs>
         </svg>
@@ -1501,7 +1517,6 @@ img {
       </button>
       <ul class="nav__links">
         <li><a href="#what-we-do">What We Do</a></li>
-        <li><a href="#services">Services</a></li>
         <li><a href="#how-we-work">Process</a></li>
         <li><a href="#why">Why ThriveKite</a></li>
         <li><a href="#contact" class="btn btn--primary btn--sm">Get in Touch</a></li>
@@ -1535,25 +1550,10 @@ img {
   <!-- What We Do -->
   <section class="section section--alt" id="what-we-do">
     <div class="container">
-      <p class="eyebrow reveal">Expertise</p>
+      <p class="eyebrow eyebrow--cool reveal">Expertise</p>
       <h2 class="section__title reveal">What We <span class="grad-cool">Do</span></h2>
-      <p class="section__subtitle reveal">We help climate companies turn early interest into lasting customer engagement.</p>
+      <p class="section__subtitle reveal">Across brand, product, and strategy, we bring behavioral science to every engagement&mdash;designing for the outcomes that matter: revenue and impact.</p>
       <div class="expertise__grid">
-        <div class="expertise__card reveal" style="--accent: var(--teal);">
-          <div class="expertise__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M8 38V14l16-8 16 8v24L24 46 8 38z" stroke="currentColor" stroke-width="2" fill="none"/>
-              <path d="M24 6v40M8 14l16 8 16-8" stroke="currentColor" stroke-width="2" fill="none"/>
-            </svg>
-          </div>
-          <span class="expertise__label">Strategy &amp; Positioning</span>
-          <h3>Clarify What Matters and Why</h3>
-          <p>We help you articulate your value in ways that resonate&mdash;turning complex climate solutions into clear, compelling narratives that drive action. Through customer discovery and strategic positioning, we make your story impossible to ignore.</p>
-          <div class="expertise__looks-like">
-            <span class="expertise__looks-like-label">What this looks like:</span>
-            Brand positioning, messaging frameworks, customer discovery, content strategy
-          </div>
-        </div>
         <div class="expertise__card reveal" style="--accent: var(--pink);">
           <div class="expertise__icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1562,12 +1562,32 @@ img {
               <path d="M24 6v8M24 34v8M6 24h8M34 24h8" stroke="currentColor" stroke-width="2"/>
             </svg>
           </div>
-          <span class="expertise__label">Brand &amp; Identity</span>
+          <span class="expertise__label">Brand</span>
           <h3>Build Identity That Builds Trust</h3>
-          <p>Your brand is how people recognize and remember you. We create visual systems and brand identities that reflect your mission, build credibility, and make participation feel like the natural choice.</p>
+          <p class="expertise__for-when"><em>For when you&rsquo;re launching, repositioning, or need the basics in place so people know what you do and why it matters.</em></p>
+          <p>Your brand is how people decide whether to pay attention. We uncover what actually motivates your audience, sharpen the story that cuts through the noise, and design the visual system that makes you credible from day one.</p>
           <div class="expertise__looks-like">
             <span class="expertise__looks-like-label">What this looks like:</span>
-            Brand identity, visual systems, marketing websites, presentation design
+            Customer discovery &amp; audience insight, brand positioning &amp; messaging, visual identity &amp; brand systems, marketing website, pitch decks &amp; presentations, core collateral
+          </div>
+          <a href="#jumpstart" class="services__jumpstart-link">See Brand Jumpstart &mdash; our fast-track package &darr;</a>
+        </div>
+        <div class="expertise__card reveal" style="--accent: var(--yellow-bright);">
+          <div class="expertise__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="10" width="36" height="28" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M6 18h36" stroke="currentColor" stroke-width="2"/>
+              <circle cx="18" cy="30" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M30 26h8M30 30h8M30 34h6" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <span class="expertise__label">Product</span>
+          <h3>Design Experiences People Actually Use</h3>
+          <p class="expertise__for-when"><em>For when you&rsquo;re building something new or making what you have work better&mdash;and need design thinking grounded in how people actually behave.</em></p>
+          <p>Whether it&rsquo;s a new product, a critical flow, or a complete redesign, we bring research, design craft, and behavioral insight together so the thing you ship actually lands. We work across digital and physical touchpoints&mdash;wherever your customers interact with what you&rsquo;ve built.</p>
+          <div class="expertise__looks-like">
+            <span class="expertise__looks-like-label">What this looks like:</span>
+            User research &amp; discovery, UX &amp; product design, journey mapping, prototyping &amp; usability testing, service design
           </div>
         </div>
         <div class="expertise__card reveal" style="--accent: var(--green);">
@@ -1580,12 +1600,13 @@ img {
               <circle cx="36" cy="36" r="2" fill="currentColor"/>
             </svg>
           </div>
-          <span class="expertise__label">Design for Adoption</span>
-          <h3>Make Participation the Path of Least Resistance</h3>
-          <p>We design experiences grounded in behavioral science&mdash;removing friction, building motivation, creating flows where the right action feels obvious. Never against people's best interests. Ethical design that makes engagement genuinely rewarding.</p>
+          <span class="expertise__label">Strategy</span>
+          <h3>Get More Climate Solutions to Scale</h3>
+          <p class="expertise__for-when"><em>For when the ambition is bigger than brand or product alone&mdash;and you need behavioral science cutting straight to the heart of what drives adoption.</em></p>
+          <p>This is where our core mission lives. We use behavior-centered design to figure out what it actually takes to get people to adopt, engage with, and champion climate solutions. Drawing on two decades of innovation leadership and everything we know about the funny ways the human brain works, we build the strategic roadmaps that turn great climate technology into widespread behavior change.</p>
           <div class="expertise__looks-like">
             <span class="expertise__looks-like-label">What this looks like:</span>
-            Behavioral diagnostics, journey optimization, UX design, experience strategy
+            Behavioral diagnostics &amp; audits, experience blueprints, theory of change strategy, behavior change roadmaps, adoption &amp; engagement strategy
           </div>
         </div>
       </div>
@@ -1595,21 +1616,21 @@ img {
   <!-- Sound Familiar -->
   <section class="section" id="challenges">
     <div class="container">
-      <p class="eyebrow reveal">Common challenges</p>
+      <p class="eyebrow eyebrow--warm reveal">Common challenges</p>
       <h2 class="section__title reveal">Sound <span class="grad-warm">Familiar?</span></h2>
       <p class="section__subtitle reveal">Signs it might be time to talk</p>
       <div class="challenges__grid">
-        <div class="challenges__item reveal" style="--item-color: var(--coral);">
-          <p>&ldquo;We've outgrown our brand and it's starting to hold us back.&rdquo;</p>
-        </div>
         <div class="challenges__item reveal" style="--item-color: var(--orange);">
           <p>&ldquo;People don't get what we do &mdash; even after we explain it.&rdquo;</p>
         </div>
-        <div class="challenges__item reveal" style="--item-color: var(--teal);">
-          <p>&ldquo;We don't have real clarity about what our customers need &mdash; or whether our solution lands.&rdquo;</p>
+        <div class="challenges__item reveal" style="--item-color: var(--coral);">
+          <p>&ldquo;We've outgrown our brand and it's starting to hold us back.&rdquo;</p>
         </div>
         <div class="challenges__item reveal" style="--item-color: var(--pink);">
           <p>&ldquo;People are interested, but we're not closing the sale.&rdquo;</p>
+        </div>
+        <div class="challenges__item reveal" style="--item-color: var(--teal);">
+          <p>&ldquo;We don't have real clarity about what our customers need &mdash; or whether our solution lands.&rdquo;</p>
         </div>
         <div class="challenges__item reveal" style="--item-color: var(--green);">
           <p>&ldquo;We're not getting the ongoing engagement we need.&rdquo;</p>
@@ -1621,70 +1642,11 @@ img {
     </div>
   </section>
 
-  <!-- Services -->
-  <section class="section section--alt" id="services">
-    <div class="container">
-      <p class="eyebrow reveal">Services</p>
-      <h2 class="section__title reveal">How We <span class="grad-mid">Help</span></h2>
-      <p class="section__subtitle reveal">We partner with climate companies at every stage of growth</p>
-      <div class="services__grid">
-        <div class="services__pillar reveal" style="--pillar-gradient: var(--gradient-warm);">
-          <div class="services__pillar-number">01</div>
-          <h3 class="services__pillar-title">Brand Foundations</h3>
-          <p class="services__for-when">For when you're launching, repositioning, or need the basics in place before tackling adoption.</p>
-          <p class="services__challenge">Before we can tackle in-depth design for adoption, a business needs positioning and messaging in place so people know what they're choosing and why they should choose it. We help get this right quickly, applying our adoption-focused methods to brand basics.</p>
-          <p class="services__what-we-do">Customer discovery to understand what actually motivates your audience. Brand positioning that cuts through the noise. Visual identity, website, and marketing collateral that build credibility from day one.</p>
-          <a href="#jumpstart" class="services__jumpstart-link">See Brand Jumpstart &mdash; our fast-track package &darr;</a>
-          <div class="services__deliverables">
-            <span class="services__deliverables-label">Deliverables</span>
-            <ul>
-              <li>Brand positioning &amp; strategy</li>
-              <li>Visual identity</li>
-              <li>Marketing website</li>
-              <li>Core marketing collateral</li>
-            </ul>
-          </div>
-        </div>
-        <div class="services__pillar reveal" style="--pillar-gradient: var(--gradient-mid);">
-          <div class="services__pillar-number">02</div>
-          <h3 class="services__pillar-title">Design for Adoption</h3>
-          <p class="services__for-when">For when you have active users but adoption or engagement is lagging.</p>
-          <p class="services__challenge">People create accounts and disappear. Conversion drops at a specific point and you don't know why. The value is there, but users aren't reaching it. Your experience feels fragmented and you're reacting to problems instead of designing the journey you want.</p>
-          <p class="services__what-we-do">We diagnose behavioral friction across your critical journeys&mdash;onboarding, activation, retention. Then we redesign using behavioral science frameworks to remove barriers and create experiences where participation becomes the natural choice.</p>
-          <div class="services__deliverables">
-            <span class="services__deliverables-label">Deliverables</span>
-            <ul>
-              <li>Behavioral diagnostics</li>
-              <li>User research &amp; testing</li>
-              <li>Journey redesign</li>
-              <li>UX &amp; product design</li>
-            </ul>
-          </div>
-        </div>
-        <div class="services__pillar reveal" style="--pillar-gradient: var(--gradient-cool);">
-          <div class="services__pillar-number">03</div>
-          <h3 class="services__pillar-title">Ongoing Partnership</h3>
-          <p class="services__for-when">For when you need strategic leadership to maintain coherence as you grow.</p>
-          <p class="services__challenge">Every new feature makes things more complicated. You need ongoing guidance but can't justify full-time headcount. You've got a roadmap but need expert support to execute it well.</p>
-          <p class="services__what-we-do">Fractional leadership or ongoing advisory to guide your team, review designs, make strategic decisions, and keep your experience coherent as you scale. We're partners, not vendors&mdash;co-creating with your team for the long haul.</p>
-          <div class="services__deliverables">
-            <span class="services__deliverables-label">Deliverables</span>
-            <ul>
-              <li>Fractional Chief Experience Officer</li>
-              <li>Weekly advisory hours</li>
-              <li>Design review &amp; guidance</li>
-              <li>Strategic partnership</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Brand Jumpstart -->
   <section class="section jumpstart" id="jumpstart">
     <div class="container">
-      <p class="eyebrow reveal">Brand Jumpstart</p>
+      <p class="eyebrow eyebrow--warm reveal">Brand Jumpstart</p>
       <h2 class="section__title reveal">Your complete brand foundation.<br><span class="jumpstart__accent">Four weeks. $3,000.</span></h2>
       <p class="section__subtitle reveal" style="max-width: 640px;">Led by a design &amp; brand expert with 20+ years of experience, accelerated by AI&mdash;so you get the quality of a premium engagement at a price that makes sense before Series A. Carbon-negative by design.</p>
 
@@ -1746,7 +1708,7 @@ img {
   <!-- How We Work -->
   <section class="section" id="how-we-work">
     <div class="container">
-      <p class="eyebrow reveal">Process</p>
+      <p class="eyebrow eyebrow--cool reveal">Process</p>
       <h2 class="section__title reveal">How We <span class="grad-cool">Work</span></h2>
       <div class="process__content reveal">
         <p class="process__lead">We start with diagnosis, then work together on what matters most.</p>
@@ -1755,21 +1717,21 @@ img {
         <div class="process__flow reveal">
           <div class="process__step">
             <div class="process__step-marker">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="grad-diagnose" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E84B8A"/><stop offset="100%" stop-color="#F06449"/></linearGradient></defs><circle cx="11" cy="11" r="8" stroke="url(#grad-diagnose)"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="url(#grad-diagnose)"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="grad-diagnose" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D41E70"/><stop offset="100%" stop-color="#E75F60"/></linearGradient></defs><circle cx="11" cy="11" r="8" stroke="url(#grad-diagnose)"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="url(#grad-diagnose)"/></svg>
             </div>
             <span class="process__step-label">Diagnose</span>
           </div>
           <div class="process__step-connector" aria-hidden="true"></div>
           <div class="process__step">
             <div class="process__step-marker">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="grad-design" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F4A742"/><stop offset="100%" stop-color="#F7DC6F"/></linearGradient></defs><path d="M12 20h9" stroke="url(#grad-design)"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="url(#grad-design)"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="grad-design" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ECA400"/><stop offset="100%" stop-color="#F7DC6F"/></linearGradient></defs><path d="M12 20h9" stroke="url(#grad-design)"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="url(#grad-design)"/></svg>
             </div>
             <span class="process__step-label">Design</span>
           </div>
           <div class="process__step-connector" aria-hidden="true"></div>
           <div class="process__step">
             <div class="process__step-marker">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="grad-partner" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ECDC4"/><stop offset="100%" stop-color="#7BC67E"/></linearGradient></defs><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="url(#grad-partner)"/><circle cx="9" cy="7" r="4" stroke="url(#grad-partner)"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="url(#grad-partner)"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="url(#grad-partner)"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="grad-partner" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5DD39E"/><stop offset="100%" stop-color="#BDE783"/></linearGradient></defs><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="url(#grad-partner)"/><circle cx="9" cy="7" r="4" stroke="url(#grad-partner)"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="url(#grad-partner)"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="url(#grad-partner)"/></svg>
             </div>
             <span class="process__step-label">Partner</span>
           </div>
@@ -1782,7 +1744,7 @@ img {
   <!-- Why ThriveKite -->
   <section class="section section--alt" id="why">
     <div class="container">
-      <p class="eyebrow reveal">The difference</p>
+      <p class="eyebrow eyebrow--warm reveal">The difference</p>
       <h2 class="section__title reveal">Why <span class="grad-warm">ThriveKite</span></h2>
       <div class="why__grid">
         <div class="why__content reveal">
@@ -1818,7 +1780,7 @@ img {
   <!-- Contact CTA -->
   <section class="section contact" id="contact">
     <div class="container contact__inner">
-      <p class="eyebrow reveal">Contact</p>
+      <p class="eyebrow eyebrow--mid reveal">Contact</p>
       <h2 class="section__title reveal">Let's Build Something That <span class="grad-mid">Matters</span></h2>
       <p class="section__subtitle reveal">Whether you're early stage and need brand foundations, or you have active users and need to fix adoption&mdash;let's start with a conversation about where you are and what's possible.</p>
       <a href="https://calendar.google.com/appointments/schedules/AcZssZ3dzje9ecoeozwvb1lzj7MsO8r0ClYh3qnKPB01NtMeYeFHupDPGCDDSBCh2vUR_3V79CE4lU7I" target="_blank" rel="noopener" class="btn btn--primary btn--lg reveal">Book a Conversation</a>
@@ -1834,8 +1796,8 @@ img {
           <path d="M27.2747 6.57881H17.4065V32.4373H9.91395V6.57881H1.78575e-05V-2.04348e-05H27.2747V6.57881ZM70.2698 -2.04348e-05V32.4373H62.7773V19.1425H49.8481V32.4373H42.3555V-2.04348e-05H49.8481V12.5637H62.7773V-2.04348e-05H70.2698ZM87.908 32.4373V-2.04348e-05H102.528C104.05 -2.04348e-05 105.451 0.319784 106.731 0.959393C108.04 1.56854 109.167 2.40613 110.111 3.47214C111.056 4.5077 111.787 5.68031 112.304 6.98998C112.853 8.29966 113.127 9.62456 113.127 10.9647C113.127 12.3048 112.914 13.584 112.487 14.8023C112.061 15.9902 111.452 17.0714 110.66 18.0461C109.868 18.9903 108.924 19.7669 107.827 20.3761L114.954 32.4373H106.685L100.472 21.9751H95.4005V32.4373H87.908ZM95.4005 15.442H102.253C102.863 15.442 103.396 15.2592 103.852 14.8937C104.34 14.4978 104.736 13.9648 105.04 13.2947C105.345 12.6246 105.497 11.848 105.497 10.9647C105.497 10.0814 105.314 9.31999 104.949 8.68038C104.614 8.01031 104.188 7.49253 103.67 7.12704C103.152 6.76155 102.604 6.57881 102.025 6.57881H95.4005V15.442ZM129.936 32.4373V-2.04348e-05H137.428V32.4373H129.936ZM159.76 -2.04348e-05L167.39 23.6655L174.928 -2.04348e-05H182.832L171.045 32.4373H163.689L151.811 -2.04348e-05H159.76ZM220.058 25.8584V32.4373H197.261V-2.04348e-05H219.647V6.57881H204.753V12.8835H217.545V18.9598H204.753V25.8584H220.058ZM236.032 32.4373V-2.04348e-05H243.524V13.98L255.403 -2.04348e-05H263.809L251.656 14.4825L264.631 32.4373H256.042L246.905 19.4167L243.524 22.8888V32.4373H236.032ZM278.461 32.4373V-2.04348e-05H285.953V32.4373H278.461ZM328.296 6.57881H318.427V32.4373H310.935V6.57881H301.021V-2.04348e-05H328.296V6.57881ZM366.174 25.8584V32.4373H343.376V-2.04348e-05H365.763V6.57881H350.869V12.8835H363.661V18.9598H350.869V25.8584H366.174Z" fill="url(#footer-logo-gradient)"/>
           <defs>
             <linearGradient id="footer-logo-gradient" x1="-0.548218" y1="2.43726" x2="79.179" y2="167.857" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#E84B8A"/>
-              <stop offset="1" stop-color="#F06449"/>
+              <stop stop-color="#D41E70"/>
+              <stop offset="1" stop-color="#E75F60"/>
             </linearGradient>
           </defs>
         </svg>
@@ -1843,7 +1805,6 @@ img {
       </div>
       <div class="footer__links">
         <a href="#what-we-do">What We Do</a>
-        <a href="#services">Services</a>
         <a href="#how-we-work">Process</a>
         <a href="#why">Why ThriveKite</a>
         <a href="#contact">Contact</a>
