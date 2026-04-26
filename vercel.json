@@ -6,8 +6,12 @@
       "destination": "https://lookout-rho.vercel.app/lookout/"
     },
     {
-      "source": "/lookout/:path*",
-      "destination": "https://lookout-rho.vercel.app/lookout/:path*"
+      "source": "/lookout/",
+      "destination": "https://lookout-rho.vercel.app/lookout/"
+    },
+    {
+      "source": "/lookout/:path+",
+      "destination": "https://lookout-rho.vercel.app/lookout/:path+"
     }
   ]
 }
