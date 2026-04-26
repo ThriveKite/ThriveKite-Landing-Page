@@ -1,17 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
-    {
-      "source": "/lookout",
-      "destination": "https://lookout-rho.vercel.app/lookout"
-    },
-    {
-      "source": "/lookout/",
-      "destination": "https://lookout-rho.vercel.app/lookout"
-    },
-    {
-      "source": "/lookout/:path+",
-      "destination": "https://lookout-rho.vercel.app/lookout/:path+"
-    }
+    { "source": "/lookout",        "destination": "https://lookout-rho.vercel.app/lookout" },
+    { "source": "/lookout/",       "destination": "https://lookout-rho.vercel.app/lookout" },
+    { "source": "/lookout/:path+", "destination": "https://lookout-rho.vercel.app/lookout/:path+" },
+
+    { "source": "/library",        "destination": "https://behavior-design-library.vercel.app/library" },
+    { "source": "/library/",       "destination": "https://behavior-design-library.vercel.app/library" },
+    { "source": "/library/:path+", "destination": "https://behavior-design-library.vercel.app/library/:path+" },
+
+    { "source": "/api/unlock",     "destination": "https://behavior-design-library.vercel.app/api/unlock" }
   ]
 }
