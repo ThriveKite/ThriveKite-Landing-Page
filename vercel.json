@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/lookout",
+      "destination": "https://lookout-rho.vercel.app/lookout/"
+    },
+    {
+      "source": "/lookout/:path*",
+      "destination": "https://lookout-rho.vercel.app/lookout/:path*"
+    }
+  ]
+}
