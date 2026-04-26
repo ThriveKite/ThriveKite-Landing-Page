@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/lookout",
-      "destination": "https://lookout-rho.vercel.app/lookout/"
+      "destination": "https://lookout-rho.vercel.app/lookout"
     },
     {
       "source": "/lookout/",
-      "destination": "https://lookout-rho.vercel.app/lookout/"
+      "destination": "https://lookout-rho.vercel.app/lookout"
     },
     {
       "source": "/lookout/:path+",
